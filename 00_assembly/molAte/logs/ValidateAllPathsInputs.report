@@ -1,0 +1,51 @@
+
+--------------------------------------------------------------------------------
+Thu Feb 09 22:33:25 2017 run on holybigmem05, pid=40283 [Jun 29 2014 22:57:16 R50081 ]
+ValidateAllPathsInputs PRE=/n/regal/mathews_lab/Molothrus_ater                 \
+                       DATA=Molothrus_trim/AllPaths K=96 K_LONG=640            \
+                       LONG_JUMPS=False LONG_READS=False REFERENCE=False       \
+                       WARN_ONLY=True MM=True _MM_INTERVAL=10                  \
+                       _MM_SUMMARY=False                                       \
+                       _MM_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_t \
+                       rim/AllPaths/makeinfo/ValidateAllPathsInputs.report.mm. \
+                       ValidateAllPathsInputs
+--------------------------------------------------------------------------------
+
+
+Redirecting standard output to the following files:
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/ValidateAllPathsInputs.report
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/makeinfo/ValidateAllPathsInputs.report.out.ValidateAllPathsInputs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/make_log/AllPaths/trim/test/2017-02-09T22:33:25/ValidateAllPathsInputs.out
+
+Validating Fragment Libraries
+=============================
+
+Libraries     : 2
+Pairs         : 288974281
+Total reads   : 577948562
+Paired reads  : 577948562
+Unpaired reads: 0
+
+lib_name  lib_ID  sep  dev  n_reads    n_bases      min_len  max_len  mean_len
+--------  ------  ---  ---  -------    -------      -------  -------  --------
+short1         0  -42  100  419850328  50974896879  20       126      121
+short2         1  -42  100  158098234  19197098677  20       126      121
+
+
+Validating Jumping Libraries
+============================
+
+Libraries     : 3
+Pairs         : 12118089
+Total reads   : 24236178
+Paired reads  : 24236178
+Unpaired reads: 0
+
+lib_name  lib_ID   sep   dev  n_reads   n_bases    min_len  max_len  mean_len
+--------  ------   ---   ---  -------   -------    -------  -------  --------
+mp1            0  6858  1500  1374812   98298833   25       108      71
+mp2            1  6830  1500  11405136  976023958  25       108      85
+mp3            2  6830  1500  11456230  980768367  25       108      85
+
+
+Validation succeeded.

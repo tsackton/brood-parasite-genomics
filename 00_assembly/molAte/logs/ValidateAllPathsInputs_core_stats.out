@@ -1,0 +1,22 @@
+
+--------------------------------------------------------------------------------
+Thu Feb 09 22:33:25 2017 run on holybigmem05, pid=40283 [Jun 29 2014 22:57:16 R50081 ]
+ValidateAllPathsInputs PRE=/n/regal/mathews_lab/Molothrus_ater                 \
+                       DATA=Molothrus_trim/AllPaths K=96 K_LONG=640            \
+                       LONG_JUMPS=False LONG_READS=False REFERENCE=False       \
+                       WARN_ONLY=True MM=True _MM_INTERVAL=10                  \
+                       _MM_SUMMARY=False                                       \
+                       _MM_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_t \
+                       rim/AllPaths/makeinfo/ValidateAllPathsInputs.report.mm. \
+                       ValidateAllPathsInputs
+--------------------------------------------------------------------------------
+
+lib_type,lib_name,tot_bases,min_read_len,max_read_len,mean_read_len
+frag,short1,50974896879,20,126,121
+frag,short2,19197098677,20,126,121
+
+lib_type,lib_name,tot_bases,min_read_len,max_read_len,mean_read_len
+jump,mp1,98298833,25,108,71
+jump,mp2,976023958,25,108,85
+jump,mp3,980768367,25,108,85
+

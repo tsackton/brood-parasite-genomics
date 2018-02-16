@@ -1,0 +1,231 @@
+Loading module centos6/gmp-5.1.1.
+Loading module centos6/mpfr-3.1.2.
+Loading module centos6/mpc-1.0.1.
+Loading module centos6/gcc-4.8.2.
+
+	bio/picard-tools-1.98
+	****************************************************
+
+	  This module sets up the environment for:
+
+	    Picard tools, version 1.98
+	    Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creatin new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported
+
+	  Use the command:
+
+	    module display bio/picard-tools-1.98
+
+	  to see exactly what this module does.
+run by :java jvm-args -jar PicardCommand.jar OPTION1=value1 OPTION2=value2...
+JVM argument -Xmx2g is recommended
+	****************************************************
+
+Loading module viz/graphviz-2.22.2.
+Loading module centos6/allpathslg-50081.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Wed Feb 15 00:00:46 2017 run on holybigmem01, pid=54734 [Jun 29 2014 22:57:16 R50081 ]
+RunAllPathsLG PRE=/n/regal/mathews_lab/Molothrus_ater DATA_SUBDIR=AllPaths     \
+              RUN=trim REFERENCE_NAME=Molothrus_trim TARGETS=standard          \
+              EVALUATION=BASIC VAPI_WARN_ONLY=True HAPLOIDIFY=True             \
+              OVERWRITE=True THREADS=64
+--------------------------------------------------------------------------------
+
+
+Hostname                  : holybigmem01.rc.fas.harvard.edu
+Available processors      : 64
+Total physical memory     : 504 GB
+
+run dir is 
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim
+
+Unable to find optional long jumping reads (>20kb) for scaffolding.
+Unable to find optional long reads for patching.
+targetsToMake = 168
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/ValidateAllPathsInputs.report
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/frag_reads_orig.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/frag_reads_orig.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/frag_reads_orig.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/jump_reads_orig.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/jump_reads_orig.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/jump_reads_orig.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/ploidy
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/assembly_stats.report
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/final.assembly.efasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/final.assembly.fasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/final.contigs.efasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/final.contigs.fasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/final.contigs.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/final.rings
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/final.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/hyper
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/hyper.prelim
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/hyper.recovered
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/hyper_plus
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/initial_scaffolds.contigs.fasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/initial_scaffolds.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/library_coverage.report
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.contigs.efasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.contigs.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.contigs.fasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.contigs.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.readlocs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.contigs.fasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.contigs.vecfasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.contigs.efasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.contigs.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.local.contigs.efasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.local.contigs.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.local.kpatch.contigs.efasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.local.kpatch.rings
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.local.kpatch.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.local.rings
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.local.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.readlocs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.rings
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.fixed.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.indel.edits
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.readlocs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.rings
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.applied.tag.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.contigs.efasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.contigs.fasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.patched.edits
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.remodel.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.clean.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.contigs.fasta
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/linear_scaffolds0.superb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/localized.hbvs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/nhood.hypers
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/post_patch/PostPatcher.linear_scaffolds0.clean.remodel.applied.tag.JRALIGNS_PSORT
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/post_patch/PostPatcher.linear_scaffolds0.clean.remodel.applied.tag.JRPS_START
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/reads.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/reads.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/reads.paths_rc.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/reads.pathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/reads.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/reads.unipath_adjgraph.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/reads.unipaths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/recover/reads.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/recover/reads.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/recover/reads.paths_rc.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/recover/reads.pathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/scaffold_reads.qltoutlet
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/scaffold_reads.qltoutlet.index
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/scaffold_reads_filtered.qltoutlet
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/scaffold_reads_filtered.qltoutlet.index
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/seeds.ids
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/unipath_link_graph.cloud.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.paths_rc.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.pathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.unilocs.96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.unilocs.96.indexr
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.unipath_adjgraph.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.unipaths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.unipaths.predicted_count.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/all_reads.unipathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.paths_rc.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.pathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.unibases.k96.lookup
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.unipath_adjgraph.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.unipaths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended.unipathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended40.shaved.patched.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended40.shaved.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended40.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended40.unipath_adjgraph.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended40.unipaths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/extended40.unipathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.gap_closed.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.gap_closed.unipath_adjgraph.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.gap_closed.unipaths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.gap_closed.unipathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.paths_rc.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.pathsdb.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads.unibases.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads_ext.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads_ext.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads_ext.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads_filt.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads_filt.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/filled_reads_filt.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.pc.ev
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.pc.info
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.pc.paths
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.pc.seq
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.ug.dict
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.ug.edges
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.ug.info
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.k28.ug.seq
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr_cpd.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr_cpd.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_corr_cpd.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_edit.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_edit.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_edit.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_filt.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_filt.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_filt.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_filt_cpd.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_filt_cpd.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_filt_cpd.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_orig.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_orig.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/frag_reads_orig.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_ec.distribs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_ec.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_ec.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_ec.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt.outies
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt_cpd.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt_cpd.outies
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt_cpd.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_filt_cpd.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_orig.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_orig.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/jump_reads_orig.qualb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ploidy
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/scaffold_reads.distribs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/scaffold_reads.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/scaffold_reads.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/unibases_as_reads.fastb
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/unibases_as_reads.pairs
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/unibases_as_reads.paths.k96
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/unipath_patch/UnipathPatcher.JSEGS
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/unipath_patch/UnipathPatcher.SEGS
+
+
+Wed Feb 15 00:00:46 2017: Starting ALLPATHS-LG Pipeline.
+
+Wed Feb 15 00:00:46 2017 : Preparing makefile.
+
+forceTargets = 0
+
+
+
+Copy of makefile in: /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/make_log/AllPaths/trim/test/2017-02-15T00:00:46/Makefile
+
+Requested targets are up to date - nothing to be done.
+
+Wed Feb 15 00:00:56 2017 : ALLPATHS-LG Pipeline Finished.
+
+Run directory: /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim
+Log directory: /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/make_log/AllPaths/trim/test/2017-02-15T00:00:46

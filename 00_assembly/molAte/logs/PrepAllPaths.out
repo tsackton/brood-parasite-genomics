@@ -1,0 +1,642 @@
+Loading module centos6/gmp-5.1.1.
+Loading module centos6/mpfr-3.1.2.
+Loading module centos6/mpc-1.0.1.
+Loading module centos6/gcc-4.8.2.
+
+	bio/picard-tools-1.98
+	****************************************************
+
+	  This module sets up the environment for:
+
+	    Picard tools, version 1.98
+	    Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creatin new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported
+
+	  Use the command:
+
+	    module display bio/picard-tools-1.98
+
+	  to see exactly what this module does.
+run by :java jvm-args -jar PicardCommand.jar OPTION1=value1 OPTION2=value2...
+JVM argument -Xmx2g is recommended
+	****************************************************
+
+Loading module viz/graphviz-2.22.2.
+Loading module centos6/allpathslg-50081.
+--------------------------------------------------------------------------------
+Feb  9 00:11:52 2017 run on localhost (pid=8751), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/PrepareAllPathsInputs.pl                    \
+    DATA_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths       \
+    IN_GROUPS_CSV=in_groups.csv IN_LIBS_CSV=in_libs.csv PLOIDY=2 HOSTS=4       \
+    JAVA_MEM_GB=50 OVERWRITE=True 
+--------------------------------------------------------------------------------
+
+---- 2017-02-09 00:11:52 (PAPI): Using cache directory '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache'
+---- 2017-02-09 00:11:52 (PAPI): Running on '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim'.
+--------------------------------------------------------------------------------
+Feb  9 00:11:52 2017 run on localhost (pid=8755), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/CacheLibs.pl                                \
+                                                                               \
+    CACHE_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache \
+    ACTION=Add IN_LIBS_CSV=in_libs.csv OVERWRITE=1 DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+---- 5 input libraries loaded from 'in_libs.csv':
+*************************************************************************************************************************************************************
+library_name, project_name, organism_name,     type, paired, frag_size, frag_stddev, insert_size, insert_stddev, read_orientation, genomic_start, genomic_end
+      short1,  MolothrusAP,     Molothrus, fragment,      1,       200,         100,            ,              ,           inward,              ,            
+      short2,  MolothrusAP,     Molothrus, fragment,      1,       200,         100,            ,              ,           inward,              ,            
+         mp1,  MolothrusAP,     Molothrus,  jumping,      1,          ,            ,        7000,          1500,          outward,              ,            
+         mp2,  MolothrusAP,     Molothrus,  jumping,      1,          ,            ,        7000,          1500,          outward,              ,            
+         mp3,  MolothrusAP,     Molothrus,  jumping,      1,          ,            ,        7000,          1500,          outward,              ,            
+*************************************************************************************************************************************************************
+---- 2017-02-09 00:11:52 (CL): Merging input libraries with cache libraries.
+===================================================================================================================
+library,  organism,     project,     type,   insert_size,   frag_size, pairing, genomic_range,    status,    action
+ short1, Molothrus, MolothrusAP, fragment,              ,  200 +- 100,  inward, [     :     ], OLD EQUAL, OVERWRITE
+ short2, Molothrus, MolothrusAP, fragment,              ,  200 +- 100,  inward, [     :     ], OLD EQUAL, OVERWRITE
+    mp1, Molothrus, MolothrusAP,  jumping,  7000 +- 1500,            , outward, [     :     ], OLD EQUAL, OVERWRITE
+    mp2, Molothrus, MolothrusAP,  jumping,  7000 +- 1500,            , outward, [     :     ], OLD EQUAL, OVERWRITE
+    mp3, Molothrus, MolothrusAP,  jumping,  7000 +- 1500,            , outward, [     :     ], OLD EQUAL, OVERWRITE
+===================================================================================================================
+---- 2017-02-09 00:11:52 (CL): 0 new libraries added to library database.
+---- 2017-02-09 00:11:52 (CL): 5 libraries updated in library database.
+--------------------------------------------------------------------------------
+Feb  9 00:11:52 2017 run on localhost (pid=8766), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/CacheGroups.pl                              \
+    ACTION=Add PICARD_TOOLS_DIR=                                               \
+    CACHE_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache \
+    IN_GROUPS_CSV=in_groups.csv INCLUDE_NON_PF_READS=1 PHRED_64=0              \
+    FORCE_PHRED=0 OVERWRITE=1 SAVE_INTERMEDIATES=0 TMP_DIR= HOSTS=4            \
+    JAVA_MEM_GB=50 DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+---- 5 input groups loaded.
+---- 5 input groups loaded from 'in_groups.csv':
+****************************************************************************************************
+group_name, library_name,                                                                  file_name
+     frag1,       short1, /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH-S1_S4_L005*.fastq.gz
+     frag2,       short2, /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH-S1_S9_L006*.fastq.gz
+     jump1,          mp1,  /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_trimmed_A*.fastq.gz
+     jump2,          mp2,  /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_trimmed_B*.fastq.gz
+     jump3,          mp3,  /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_trimmed_C*.fastq.gz
+****************************************************************************************************
+---- 3 cached groups loaded.
+---- 5 cached libraries loaded.
+---- Converting: group 'frag1' will be added to the database.
+---- Converting: group 'frag2' will be added to the database.
+---- Converting: group 'jump1' is already in the database and it WILL be REPLACED.
+---- Converting: group 'jump2' is already in the database and it WILL be REPLACED.
+---- Converting: group 'jump3' is already in the database and it WILL be REPLACED.
+--------------------------------------------------------------------------------
+---- 2017-02-09 00:11:53 (CG): Importing group 'frag1'.
+---- 2017-02-09 00:11:53 (CG): Importing group 'frag2'.
+---- 2017-02-09 00:11:53 (CG): Importing group 'jump1'.
+---- 2017-02-09 00:11:53 (CG): Importing group 'jump2'.
+--------------------------------------------------------------------------------
+Feb  9 00:11:53 2017 run on localhost (pid=8781), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/ConvertToFastbQualb.pl                      \
+    PICARD_TOOLS_DIR=                                                          \
+    TMP_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/picard_tmp \
+    DATA_FILE=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_trimmed_A*.fastq.gz \
+    PAIRED=1                                                                   \
+    OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump1 \
+    REVERSE_READS=True TRIM_START=0 TRIM_END=0 INCLUDE_NON_PF_READS=1          \
+    PHRED_64=0 FORCE_PHRED=0 REVERT_SAM=0 OVERWRITE=1 SAVE_COMPRESSED_FASTQ=0  \
+    SAVE_INTERMEDIATES=0 JAVA_MEM_GB=50 DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Feb  9 00:11:53 2017 run on localhost (pid=8779), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/ConvertToFastbQualb.pl                      \
+    PICARD_TOOLS_DIR=                                                          \
+    TMP_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/picard_tmp \
+    DATA_FILE=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH-S1_S9_L006*.fastq.gz \
+    PAIRED=1                                                                   \
+    OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/frag2 \
+    REVERSE_READS=False TRIM_START=0 TRIM_END=0 INCLUDE_NON_PF_READS=1         \
+    PHRED_64=0 FORCE_PHRED=0 REVERT_SAM=0 OVERWRITE=1 SAVE_COMPRESSED_FASTQ=0  \
+    SAVE_INTERMEDIATES=0 JAVA_MEM_GB=50 DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Feb  9 00:11:53 2017 run on localhost (pid=8778), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/ConvertToFastbQualb.pl                      \
+    PICARD_TOOLS_DIR=                                                          \
+    TMP_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/picard_tmp \
+    DATA_FILE=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_trimmed_B*.fastq.gz \
+    PAIRED=1                                                                   \
+    OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump2 \
+    REVERSE_READS=True TRIM_START=0 TRIM_END=0 INCLUDE_NON_PF_READS=1          \
+    PHRED_64=0 FORCE_PHRED=0 REVERT_SAM=0 OVERWRITE=1 SAVE_COMPRESSED_FASTQ=0  \
+    SAVE_INTERMEDIATES=0 JAVA_MEM_GB=50 DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Feb  9 00:11:53 2017 run on localhost (pid=8777), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/ConvertToFastbQualb.pl                      \
+    PICARD_TOOLS_DIR=                                                          \
+    TMP_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/picard_tmp \
+    DATA_FILE=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH-S1_S4_L005*.fastq.gz \
+    PAIRED=1                                                                   \
+    OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/frag1 \
+    REVERSE_READS=False TRIM_START=0 TRIM_END=0 INCLUDE_NON_PF_READS=1         \
+    PHRED_64=0 FORCE_PHRED=0 REVERT_SAM=0 OVERWRITE=1 SAVE_COMPRESSED_FASTQ=0  \
+    SAVE_INTERMEDIATES=0 JAVA_MEM_GB=50 DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+Performing re-exec to adjust stack size.
+Performing re-exec to adjust stack size.
+Performing re-exec to adjust stack size.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:11:53 2017 run on holy2a08201, pid=8788  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH- \
+                  S1_S9_L006_R1_001_val_1.fastq.gz                             \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag2.tmp/0 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:11:53 2017 run on holy2a08201, pid=8786  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_ \
+                  trimmed_A_R1.fastq.gz                                        \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump1.tmp/0 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:11:53 2017 run on holy2a08201, pid=8790  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_ \
+                  trimmed_B_R1.fastq.gz                                        \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump2.tmp/0 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:11:53 2017 run on holy2a08201, pid=8794  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH- \
+                  S1_S4_L005_R1_001_val_1.fastq.gz                             \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag1.tmp/0 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:11:59 2017 (FTFQ):         687406  reads in fastq file.
+Thu Feb 09 00:11:59 2017 (FTFQ):         687406  reads in fastb/qualb files.
+Thu Feb 09 00:11:59 2017 (FTFQ):     0.00178401  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:11:59 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:11:59 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:11:59 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:11:59 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:12:00 2017 run on holy2a08201, pid=8800  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_ \
+                  trimmed_A_R2.fastq.gz                                        \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump1.tmp/1 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:12:06 2017 (FTFQ):         687406  reads in fastq file.
+Thu Feb 09 00:12:06 2017 (FTFQ):         687406  reads in fastb/qualb files.
+Thu Feb 09 00:12:06 2017 (FTFQ):     0.00636047  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:12:06 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:12:06 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:12:06 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:12:06 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:12:06 2017 run on holy2a08201, pid=8803  [Jun 29 2014 22:57:16 R50081 ]
+MergePairedFastbs                                                              \
+                  HEAD1_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump1.tmp/0                              \
+                  HEAD2_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump1.tmp/1                              \
+                  HEAD_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump1.tmp/all NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:12:06 2017 (MPF): Merging.
+Thu Feb 09 00:12:11 2017 (MPF): Merged 687406 read pairs.
+Thu Feb 09 00:12:11 2017 (MPF): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:12:11 2017 run on holy2a08201, pid=8805  [Jun 29 2014 22:57:16 R50081 ]
+FastbQualbTrimReverse                                                          \
+                      IN_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_tr \
+                      im/AllPaths/read_cache/jump1.tmp/all                     \
+                      OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_t \
+                      rim/AllPaths/read_cache/jump1 TRIM_START=0 TRIM_END=0    \
+                      REVERSE=True NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:12:11 2017 (FQTR): Trimming bases to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump1.fastb'.
+Thu Feb 09 00:12:14 2017 (FQTR): Trimming quals to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump1.qualb'.
+Thu Feb 09 00:12:16 2017 (FQTR): Done.
+---- 2017-02-09 00:12:20 (CG): Importing group 'jump3'.
+--------------------------------------------------------------------------------
+Feb  9 00:12:20 2017 run on localhost (pid=8819), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/ConvertToFastbQualb.pl                      \
+    PICARD_TOOLS_DIR=                                                          \
+    TMP_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/picard_tmp \
+    DATA_FILE=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_trimmed_C*.fastq.gz \
+    PAIRED=1                                                                   \
+    OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump3 \
+    REVERSE_READS=True TRIM_START=0 TRIM_END=0 INCLUDE_NON_PF_READS=1          \
+    PHRED_64=0 FORCE_PHRED=0 REVERT_SAM=0 OVERWRITE=1 SAVE_COMPRESSED_FASTQ=0  \
+    SAVE_INTERMEDIATES=0 JAVA_MEM_GB=50 DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:12:20 2017 run on holy2a08201, pid=8822  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_ \
+                  trimmed_C_R1.fastq.gz                                        \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump3.tmp/0 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:12:47 2017 (FTFQ):        5702568  reads in fastq file.
+Thu Feb 09 00:12:47 2017 (FTFQ):        5702568  reads in fastb/qualb files.
+Thu Feb 09 00:12:47 2017 (FTFQ):     0.00248192  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:12:47 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:12:47 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:12:47 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:12:47 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:12:48 2017 run on holy2a08201, pid=8825  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_ \
+                  trimmed_B_R2.fastq.gz                                        \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump2.tmp/1 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:13:07 2017 (FTFQ):        5728115  reads in fastq file.
+Thu Feb 09 00:13:07 2017 (FTFQ):        5728115  reads in fastb/qualb files.
+Thu Feb 09 00:13:07 2017 (FTFQ):      0.0027579  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:13:07 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:13:07 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:13:07 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:13:07 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:13:08 2017 run on holy2a08201, pid=8836  [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MP_ \
+                  trimmed_C_R2.fastq.gz                                        \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump3.tmp/1 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:13:29 2017 (FTFQ):        5702568  reads in fastq file.
+Thu Feb 09 00:13:29 2017 (FTFQ):        5702568  reads in fastb/qualb files.
+Thu Feb 09 00:13:29 2017 (FTFQ):     0.00501475  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:13:29 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:13:29 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:13:29 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:13:29 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:13:30 2017 run on holy2a08201, pid=8839  [Jun 29 2014 22:57:16 R50081 ]
+MergePairedFastbs                                                              \
+                  HEAD1_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump2.tmp/0                              \
+                  HEAD2_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump2.tmp/1                              \
+                  HEAD_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump2.tmp/all NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:13:30 2017 (MPF): Merging.
+Thu Feb 09 00:14:12 2017 (FTFQ):        5728115  reads in fastq file.
+Thu Feb 09 00:14:12 2017 (FTFQ):        5728115  reads in fastb/qualb files.
+Thu Feb 09 00:14:12 2017 (FTFQ):      0.0734142  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:14:12 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:14:12 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:14:12 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:14:12 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:14:14 2017 run on holy2a08201, pid=8871  [Jun 29 2014 22:57:16 R50081 ]
+MergePairedFastbs                                                              \
+                  HEAD1_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump3.tmp/0                              \
+                  HEAD2_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump3.tmp/1                              \
+                  HEAD_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/jump3.tmp/all NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:14:14 2017 (MPF): Merging.
+Thu Feb 09 00:14:24 2017 (MPF): Merged 5702568 read pairs.
+Thu Feb 09 00:14:24 2017 (MPF): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:14:24 2017 run on holy2a08201, pid=8873  [Jun 29 2014 22:57:16 R50081 ]
+FastbQualbTrimReverse                                                          \
+                      IN_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_tr \
+                      im/AllPaths/read_cache/jump2.tmp/all                     \
+                      OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_t \
+                      rim/AllPaths/read_cache/jump2 TRIM_START=0 TRIM_END=0    \
+                      REVERSE=True NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:14:24 2017 (FQTR): Trimming bases to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump2.fastb'.
+Thu Feb 09 00:14:39 2017 (MPF): Merged 5728115 read pairs.
+Thu Feb 09 00:14:39 2017 (MPF): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:14:39 2017 run on holy2a08201, pid=8885  [Jun 29 2014 22:57:16 R50081 ]
+FastbQualbTrimReverse                                                          \
+                      IN_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_tr \
+                      im/AllPaths/read_cache/jump3.tmp/all                     \
+                      OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_t \
+                      rim/AllPaths/read_cache/jump3 TRIM_START=0 TRIM_END=0    \
+                      REVERSE=True NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:14:39 2017 (FQTR): Trimming bases to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump3.fastb'.
+Thu Feb 09 00:14:42 2017 (FQTR): Trimming quals to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump2.qualb'.
+Thu Feb 09 00:14:54 2017 (FQTR): Trimming quals to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/jump3.qualb'.
+Thu Feb 09 00:15:03 2017 (FQTR): Done.
+Thu Feb 09 00:15:13 2017 (FQTR): Done.
+Thu Feb 09 00:25:20 2017 (FTFQ):       79049117  reads in fastq file.
+Thu Feb 09 00:25:20 2017 (FTFQ):       79049117  reads in fastb/qualb files.
+Thu Feb 09 00:25:20 2017 (FTFQ):      0.0118615  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:25:20 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:25:20 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:25:20 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:25:20 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:25:39 2017 run on holy2a08201, pid=10891 [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH- \
+                  S1_S9_L006_R2_001_val_2.fastq.gz                             \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag2.tmp/1 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:39:11 2017 (FTFQ):       79049117  reads in fastq file.
+Thu Feb 09 00:39:11 2017 (FTFQ):       79049117  reads in fastb/qualb files.
+Thu Feb 09 00:39:11 2017 (FTFQ):      0.0207635  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:39:11 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:39:11 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:39:11 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:39:11 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:39:31 2017 run on holy2a08201, pid=12319 [Jun 29 2014 22:57:16 R50081 ]
+MergePairedFastbs                                                              \
+                  HEAD1_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag2.tmp/0                              \
+                  HEAD2_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag2.tmp/1                              \
+                  HEAD_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag2.tmp/all NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:39:31 2017 (MPF): Merging.
+Thu Feb 09 00:47:02 2017 (FTFQ):      209925164  reads in fastq file.
+Thu Feb 09 00:47:02 2017 (FTFQ):      209925164  reads in fastb/qualb files.
+Thu Feb 09 00:47:02 2017 (FTFQ):      0.0044489  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 00:47:02 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 00:47:02 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 00:47:02 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 00:47:02 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:47:59 2017 run on holy2a08201, pid=13324 [Jun 29 2014 22:57:16 R50081 ]
+FastqToFastbQualb                                                              \
+                  FASTQ=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/MH- \
+                  S1_S4_L005_R2_001_val_2.fastq.gz                             \
+                  OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag1.tmp/1 PHRED_64=False               \
+                  FORCE_PHRED=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:51:36 2017 (MPF): Merged 79049117 read pairs.
+Thu Feb 09 00:51:36 2017 (MPF): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 00:51:37 2017 run on holy2a08201, pid=13485 [Jun 29 2014 22:57:16 R50081 ]
+FastbQualbTrimReverse                                                          \
+                      IN_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_tr \
+                      im/AllPaths/read_cache/frag2.tmp/all                     \
+                      OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_t \
+                      rim/AllPaths/read_cache/frag2 TRIM_START=0 TRIM_END=0    \
+                      REVERSE=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 00:51:37 2017 (FQTR): Trimming bases to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/frag2.fastb'.
+Thu Feb 09 00:54:11 2017 (FQTR): Trimming quals to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/frag2.qualb'.
+Thu Feb 09 00:59:48 2017 (FQTR): Done.
+Thu Feb 09 01:23:48 2017 (FTFQ):      209925164  reads in fastq file.
+Thu Feb 09 01:23:48 2017 (FTFQ):      209925164  reads in fastb/qualb files.
+Thu Feb 09 01:23:48 2017 (FTFQ):      0.0255596  % base errors due to ambiguities (all 'N' would yield 75%).
+Thu Feb 09 01:23:48 2017 (FTFQ):      PHRED +33  quality score encoding. Score set to Q0 if fastq score is negative.
+Thu Feb 09 01:23:48 2017 (FTFQ):              2  lowest quality score.
+Thu Feb 09 01:23:48 2017 (FTFQ):             37  highest quality score.
+Thu Feb 09 01:23:48 2017 (FTFQ): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 01:24:44 2017 run on holy2a08201, pid=14615 [Jun 29 2014 22:57:16 R50081 ]
+MergePairedFastbs                                                              \
+                  HEAD1_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag1.tmp/0                              \
+                  HEAD2_IN=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag1.tmp/1                              \
+                  HEAD_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/ \
+                  AllPaths/read_cache/frag1.tmp/all NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 01:24:44 2017 (MPF): Merging.
+Thu Feb 09 01:43:44 2017 (MPF): Merged 209925164 read pairs.
+Thu Feb 09 01:43:44 2017 (MPF): Done.
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 01:43:46 2017 run on holy2a08201, pid=17001 [Jun 29 2014 22:57:16 R50081 ]
+FastbQualbTrimReverse                                                          \
+                      IN_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_tr \
+                      im/AllPaths/read_cache/frag1.tmp/all                     \
+                      OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_t \
+                      rim/AllPaths/read_cache/frag1 TRIM_START=0 TRIM_END=0    \
+                      REVERSE=False NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 01:43:46 2017 (FQTR): Trimming bases to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/frag1.fastb'.
+Thu Feb 09 01:55:30 2017 (FQTR): Trimming quals to '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache/frag1.qualb'.
+Thu Feb 09 02:10:24 2017 (FQTR): Done.
+---- 2017-02-09 02:31:06 (CG): Final size of groups database:  5
+===================================================================================================================================================
+group, library,  organism,     project,     type,   insert_size,   frag_size,   pairing, genomic_range, status, revert_sam,    action,        notes
+frag1,  short1, Molothrus, MolothrusAP, fragment,              ,  200 +- 100, in (!rev), [     :     ],    NEW,         no,       ADD, [db updated]
+frag2,  short2, Molothrus, MolothrusAP, fragment,              ,  200 +- 100, in (!rev), [     :     ],    NEW,         no,       ADD, [db updated]
+jump1,     mp1, Molothrus, MolothrusAP,  jumping,  7000 +- 1500,            , out (rev), [     :     ],    OLD,         no, OVERWRITE, [db updated]
+jump2,     mp2, Molothrus, MolothrusAP,  jumping,  7000 +- 1500,            , out (rev), [     :     ],    OLD,         no, OVERWRITE, [db updated]
+jump3,     mp3, Molothrus, MolothrusAP,  jumping,  7000 +- 1500,            , out (rev), [     :     ],    OLD,         no, OVERWRITE, [db updated]
+===================================================================================================================================================
+--------------------------------------------------------------------------------
+Feb  9 02:31:06 2017 run on localhost (pid=21182), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/CacheToAllPathsInputs.pl                    \
+                                                                               \
+    CACHE_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache \
+    PLOIDY=2 IN_GROUPS_CSV=in_groups.csv                                       \
+    DATA_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths       \
+    GENOME_SIZE= FRAG_COVERAGE= FRAG_FRAC= JUMP_COVERAGE= JUMP_FRAC=           \
+    LONG_JUMP_COVERAGE= LONG_JUMP_FRAC= LONG_JUMP_MIN_SIZE=20000               \
+    LONG_READ_COVERAGE= LONG_READ_FRAC= LONG_READ_MIN_LEN=500 DRY_RUN=0        \
+    VERBOSE=1 
+--------------------------------------------------------------------------------
+
+---- 2017-02-09 02:31:06 (CTAPI): 5 groups loaded from the cache.
+---- 2017-02-09 02:31:06 (CTAPI): 5 libraries loaded from the cache.
+--------------------------------------------------------------------------------
+Feb  9 02:31:06 2017 run on localhost (pid=21183), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/CacheToReads.pl                             \
+                                                                               \
+    CACHE_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache \
+    GROUPS="{frag2,frag1}" FRACTIONS="{1,1}"                                   \
+    OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/frag_reads_orig \
+    DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 02:31:07 2017 run on holy2a08201, pid=21184 [Jun 29 2014 22:57:16 R50081 ]
+CacheReadsMerge                                                                \
+                CACHE_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/A \
+                llPaths/read_cache GROUP_HEADS="{frag1,frag2}"                 \
+                GROUP_LIB_NAMES="{short1,short2}" GROUP_LIB_PAIRED="{1,1}"     \
+                GROUP_LIB_SIZES="{200,200}" GROUP_LIB_STDDEVS="{100,100}"      \
+                GROUP_READ_SIZES="{121.4,121.4}" GROUP_FRACS="{1,1}"           \
+                OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/Al \
+                lPaths/frag_reads_orig NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 02:31:07 2017 (CRM): Starting merge of fastb/qualb files from all groups...
+Thu Feb 09 02:31:07 2017 (CRM): Merging read set into '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/frag_reads_orig.{fastb,qualb}'.
+Thu Feb 09 02:48:58 2017 (CRM):    577948562  reads in.
+Thu Feb 09 02:48:58 2017 (CRM):    577948562  reads out.
+Thu Feb 09 02:48:58 2017 (CRM):        100.0  % of reads included.
+Thu Feb 09 02:48:58 2017 (CRM): Creating PairsManager.
+Thu Feb 09 02:49:32 2017 (CRM): Library statistics:
+
+lib_name  lib_ID  sep  dev  n_reads
+--------  ------  ---  ---  -------
+short1         0  -42  100  419850328
+short2         1  -42  100  158098234
+
+
+Thu Feb 09 02:49:34 2017 (CRM): : Done!
+
+--------------------------------------------------------------------------------
+Feb  9 02:49:35 2017 run on localhost (pid=21906), last modified Jun 30 00:01:02 2014
+/n/sw/centos6/allpathslg-50081/bin/CacheToReads.pl                             \
+                                                                               \
+    CACHE_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/read_cache \
+    GROUPS="{jump1,jump2,jump3}" FRACTIONS="{1,1,1}"                           \
+    OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/jump_reads_orig \
+    DRY_RUN=0 VERBOSE=1 
+--------------------------------------------------------------------------------
+
+Performing re-exec to adjust stack size.
+
+--------------------------------------------------------------------------------
+Thu Feb 09 02:49:35 2017 run on holy2a08201, pid=21907 [Jun 29 2014 22:57:16 R50081 ]
+CacheReadsMerge                                                                \
+                CACHE_DIR=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/A \
+                llPaths/read_cache GROUP_HEADS="{jump1,jump2,jump3}"           \
+                GROUP_LIB_NAMES="{mp1,mp2,mp3}" GROUP_LIB_PAIRED="{1,1,1}"     \
+                GROUP_LIB_SIZES="{7000,7000,7000}"                             \
+                GROUP_LIB_STDDEVS="{1500,1500,1500}"                           \
+                GROUP_READ_SIZES="{71.5,85.6,85.6}" GROUP_FRACS="{1,1,1}"      \
+                OUT_HEAD=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/Al \
+                lPaths/jump_reads_orig NH=False
+--------------------------------------------------------------------------------
+
+Thu Feb 09 02:49:35 2017 (CRM): Starting merge of fastb/qualb files from all groups...
+Thu Feb 09 02:49:35 2017 (CRM): Merging read set into '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/jump_reads_orig.{fastb,qualb}'.
+Thu Feb 09 02:50:10 2017 (CRM):     24236178  reads in.
+Thu Feb 09 02:50:10 2017 (CRM):     24236178  reads out.
+Thu Feb 09 02:50:10 2017 (CRM):        100.0  % of reads included.
+Thu Feb 09 02:50:10 2017 (CRM): Creating PairsManager.
+Thu Feb 09 02:50:12 2017 (CRM): Library statistics:
+
+lib_name  lib_ID   sep   dev  n_reads
+--------  ------   ---   ---  -------
+mp1            0  6858  1500  1374812
+mp2            1  6830  1500  11405136
+mp3            2  6830  1500  11456230
+
+
+Thu Feb 09 02:50:12 2017 (CRM): : Done!
+
+=========================================================================================================================================================
+group, library,     type,      prefix_out,  reads_in, fraction, reads_out, coverage, phys_cov, pairing,  library_size, overlap, min_mean_max_len, mean_Qs
+frag2,  short2, fragment, frag_reads_orig, 158098234,  100.0 %, 158098234,        -,        -,  inward,   200 +-  100,    67 %, [  20  121  126], (36 36)
+frag1,  short1, fragment, frag_reads_orig, 419850328,  100.0 %, 419850328,        -,        -,  inward,   200 +-  100,    67 %, [  20  121  126], (36 36)
+jump1,     mp1,  jumping, jump_reads_orig,   1374812,  100.0 %,   1374812,        -,        -, outward,  7000 +- 1500,        , [  25   71  108], (36 36)
+jump2,     mp2,  jumping, jump_reads_orig,  11405136,  100.0 %,  11405136,        -,        -, outward,  7000 +- 1500,        , [  25   85  108], (36 36)
+jump3,     mp3,  jumping, jump_reads_orig,  11456230,  100.0 %,  11456230,        -,        -, outward,  7000 +- 1500,        , [  25   85  108], (36 35)
+=========================================================================================================================================================
+==============================================================================================================================
+     prefix_out, n_groups, n_libraries,  reads_in, fraction, reads_out, coverage, phys_cov, overlap, min_mean_max_len, mean_Qs
+frag_reads_orig,        2,           2, 577948562,  100.0 %, 577948562,        -,        -,    67 %, [  20  121  126], (36 36)
+jump_reads_orig,        3,           3,  24236178,  100.0 %,  24236178,        -,        -,        , [  25   84  108], (36 35)
+==============================================================================================================================
+
+==================== WARNINGS ====================
+
+!!!! No 'long_jump' cached read groups found.
+     Long jumping reads (typically 40 kb, < 1x coverage) are useful only for scaffolding of vertebrate size genomes, and are not required for an assembly.
+
+
+!!!! No 'long' cached read groups found.
+     Long reads (typically, unpaired, 1 kb, 50x coverage) are useful only for gap patching of relatively small genomes, and are not required for an assembly.
+
+==================================================
+
+---- 2017-02-09 02:50:12 (CTAPI): Creating '/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/ploidy' with PLOIDY = 2.
+---- 2017-02-09 02:50:12 (CTAPI): Done.
+
+---- 2017-02-09 02:50:12 (PAPI): Done.
+
+slurmstepd: error: Exceeded step memory limit at some point.

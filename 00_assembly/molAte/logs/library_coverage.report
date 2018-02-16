@@ -1,0 +1,47 @@
+
+--------------------------------------------------------------------------------
+Tue Feb 14 03:56:41 2017 run on holybigmem05, pid=903   [Jun 29 2014 22:57:16 R50081 ]
+LibCoverage PRE=/n/regal/mathews_lab/Molothrus_ater                            \
+            DATA=Molothrus_trim/AllPaths RUN=trim SUBDIR=test                  \
+            ASSEMBLY=linear_scaffolds0.clean.remodel.applied.tag.fixed         \
+            NUM_THREADS=64 MM=True _MM_INTERVAL=10 _MM_SUMMARY=False           \
+            _MM_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPath \
+            s/trim/ASSEMBLIES/test/makeinfo/library_coverage.report.mm.LibCove \
+            rage
+--------------------------------------------------------------------------------
+
+
+Redirecting standard output to the following files:
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/library_coverage.report
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/makeinfo/library_coverage.report.out.LibCoverage
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/make_log/AllPaths/trim/test/2017-02-09T22:33:25/LibCoverage.out
+
+Unable to find pairs file: /n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/long_jump_reads_filt.pairs
+Tue Feb 14 03:57:00 2017: loading pairing info for frag
+Tue Feb 14 03:57:17 2017: loading pairing info for jump
+Tue Feb 14 03:57:34 2017: found 5 libraries
+Tue Feb 14 03:57:34 2017: computing physical coverage
+Tue Feb 14 04:00:33 2017: counting reads in input
+Tue Feb 14 04:01:24 2017: generating output table
+PERFSTAT: BLOCK_START [LibCoverage table]
+
+LEGEND
+   n_reads:  number of reads in input
+   %_used:   % of reads assembled
+   scov:     sequence coverage
+   n_pairs:  number of valid pairs assembled
+   pcov:     physical coverage
+
+type  lib_name          lib_stats      n_reads  %_used  scov      n_pairs  pcov
+                                                                               
+frag  short1          -75 +/- 100  419,850,328    47.9  25.1  161,706,341  34.6
+frag  short2          -75 +/- 100  158,098,234    59.7  11.6   61,454,864  13.1
+frag  === total ===                577,948,562    51.2  36.7  223,161,205  47.7
+                                                                               
+jump  mp1            2689 +/- 325    1,374,812    79.2   0.1      304,410   1.3
+jump  mp2            2499 +/- 338   11,405,136    74.1   0.7    2,559,552   9.5
+jump  mp3            2486 +/- 339   11,456,230    74.1   0.7    2,565,823   9.6
+jump  === total ===                 24,236,178    74.4   1.5    5,429,785  20.4
+                                                                               
+PERFSTAT: BLOCK_STOP
+Tue Feb 14 04:01:24 2017: done

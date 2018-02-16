@@ -1,0 +1,33 @@
+
+--------------------------------------------------------------------------------
+Tue Feb 14 03:44:24 2017 run on holybigmem05, pid=65392 [Jun 29 2014 22:57:16 R50081 ]
+AllPathsReport PRE=/n/regal/mathews_lab/Molothrus_ater                         \
+               DATA=Molothrus_trim/AllPaths RUN=trim SUBDIR=test               \
+               ASSEMBLY=final MM=True _MM_INTERVAL=10 _MM_SUMMARY=False        \
+               _MM_OUT=/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllP \
+               aths/trim/ASSEMBLIES/test/makeinfo/assembly_stats.report.mm.All \
+               PathsReport
+--------------------------------------------------------------------------------
+
+
+Redirecting standard output to the following files:
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/assembly_stats.report
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/AllPaths/trim/ASSEMBLIES/test/makeinfo/assembly_stats.report.out.AllPathsReport
+/n/regal/mathews_lab/Molothrus_ater/Molothrus_trim/make_log/AllPaths/trim/test/2017-02-09T22:33:25/AllPathsReport.out
+
+PERFSTAT: contig minimum size for reporting [ap_report_min_contig] = 1000
+PERFSTAT: number of contigs [n_contigs] = 174047
+PERFSTAT: number of contigs per Mb [contigs_per_Mb] = 168.1
+PERFSTAT: number of scaffolds [n_scaffolds] = 165395
+PERFSTAT: total contig length [contig_length] = 1026364800
+PERFSTAT: total scaffold length, with gaps [scaff_length_gap] = 1035578296
+PERFSTAT: N50 contig size in kb [N50_contig] = 8.5
+PERFSTAT: N50 scaffold size in kb [N50_scaffold] = 9
+PERFSTAT: N50 scaffold size in kb, with gaps [N50_scaff_gap] = 9
+PERFSTAT: number of scaffolds per Mb [scaff_per_Mb] = 159.71
+PERFSTAT: median size of gaps in scaffolds [median_gap] = 645
+PERFSTAT: median dev of gaps in scaffolds [median_gap_dev] = 179
+PERFSTAT: % of bases in captured gaps [frac_captured_gaps] = 0.74
+PERFSTAT: % of bases in negative gaps (after 5 devs) [frac_negative_gaps] = 0.00
+PERFSTAT: %% of ambiguous bases [amb_base_frac] = 78.46
+PERFSTAT: ambiguities per 10,000 bases [ambiguity_frac] = 27.88

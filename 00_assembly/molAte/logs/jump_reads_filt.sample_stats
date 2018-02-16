@@ -1,0 +1,15 @@
+                              ------ SHORT STATS ------
+libraryName libNo origSep origDev newInSep newInDev 3sigma% newOutSep newOutDev percInnies percOuties 
+        mp1     0    6858    1500     2689      325      99         0         0        100          0 
+        mp2     1    6830    1500     2499      338     100         0         0        100          0 
+        mp3     2    6830    1500     2486      339      99         0         0        100          0 
+--------------------------------------------------------------
+
+
+                         ------ MORE DETAILED STATS ------
+libraryName libNo origSep origDev newInSep newInDev 3sigma% newOutSep newOutDev nLibraryPairs nPairsSampled nRead1Algnd nRead2Algnd nPairsAlgnd nPairsUniq nPairsSameContig nPairsLogical nPairsInnies nPairsOuties nSampleInnies nSampleOuties 
+        mp1     0    6858    1500     2689      325      99         0         0        666215         14279        3088        3131        2154       2123             2010          2003         2000            3          2000             3 
+        mp2     1    6830    1500     2499      338     100         0         0       5260582         13750        3053        2995        2144       2113             2009          2001         2000            1          2000             1 
+        mp3     2    6830    1500     2486      339      99         0         0       5284523         13318        3039        2947        2135       2106             2006          2001         2000            1          2000             1 
+--------------------------------------------------------------
+
