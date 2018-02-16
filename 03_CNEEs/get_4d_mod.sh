@@ -23,3 +23,5 @@ genePredToBed taeGut.ncbi.gp taeGut.cds.bed
 #run phylo4d from haltools
 
 halPhyloPTrain.py --numProc 32 --noAncestors --substMod SSREV ../work/broodParaAlign.hal  taeGut1 taeGut.cds.bed bp_neut_4d.mod
+
+#will need to rerun/parse this to include only a single taeGut before final runs
