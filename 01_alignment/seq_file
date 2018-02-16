@@ -1,0 +1,21 @@
+(galGal,(colLiv,((calAnn,cucCan),(falPer,(corCor,((parMaj,pseHum),(ficAlb,((serCan,(pasDom,(zonAlb,((molAte,agePho),setCor)))),(vidMac,(taeGut1,taeGut_dip))))))))));
+
+galGal	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/galGal.fa.filt1kb
+colLiv	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/colLiv.fa.filt1kb
+calAnn	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/calAnn.fa.filt1kb
+falPer	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/falPer.fa.filt1kb
+corCor	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/corCor.fa.filt1kb
+ficAlb	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/ficAlb.fa.filt1kb
+parMaj	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/parMaj.fa.filt1kb
+taeGut1	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/taeGut1.fa.filt1kb
+taeGut_dip	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/taeGut_dip.fa.filt1kb
+agePho	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/agePho.fa.filt1kb
+cucCan	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/cucCan.fa.filt1kb
+molAte	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/molAte.fa.filt1kb
+pasDom	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/pasDom.fa.filt1kb
+pseHum	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/pseHum.fa.filt1kb
+serCan	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/serCan.fa.filt1kb
+setCor	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/setCor.fa.filt1kb
+vidMac	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/vidMac.fa.filt1kb
+zonAlb	/n/holylfs/LABS/informatics/tsackton/broodParaAlign/input_seqs/zonAlb.fa.filt1kb
+
