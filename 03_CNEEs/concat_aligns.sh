@@ -2,7 +2,7 @@
 
 #concat
 python3 /n/home12/tsackton/envs/py3/lib/python3.5/site-packages/amas/AMAS.py concat \
--i batch*_output/*.fa \
+-i batch*_output/*.aligned.fa \
 -f fasta \
 -d dna \
 -p cnee_part.txt \
