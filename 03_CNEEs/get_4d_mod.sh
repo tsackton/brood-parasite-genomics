@@ -19,9 +19,11 @@ gffread --no-pseudo -C -T -o - GCF_000151805.1_Taeniopygia_guttata-3.2.4_genomic
 gtfToGenePred taeGut_filt.gtf taeGut.ncbi.gp
 genePredToBed taeGut.ncbi.gp taeGut.cds.bed
 
-
 #run phylo4d from haltools
 
-halPhyloPTrain.py --numProc 32 --noAncestors --substMod SSREV ../work/broodParaAlign.hal  taeGut1 taeGut.cds.bed bp_neut_4d.mod
+halPhyloPTrain.py --numProc 12 --noAncestors --substMod SSREV ../work/broodParaAlign.hal \
+--tree "(galGal(colLiv((calAnn,cucCan),(falPer,(corCor,((parMaj,pseHum),(ficAlb,((serCan,(pasDom,(zonAlb,((molAte,agePho),setCor)))),(vidMac,taeGut1)))))))));" \
+--targetGenomes "galGal,colLiv,calAnn,cucCan,falPer,corCor,parMaj,pseHum,ficAlb,serCan,pasDom,zonAlb,molAte,agePho,setCor,vidMac,taeGut1" \
+taeGut1 taeGut.cds.bed bp_neut_4d.mod
 
 #will need to rerun/parse this to include only a single taeGut before final runs
