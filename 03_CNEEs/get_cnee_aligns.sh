@@ -89,6 +89,11 @@ awk '{print ">"$1 >> "unaligned/"$2".fa"; print $3 >> "unaligned/"$2".fa"; close
 
 #at this stage we have a fasta for each CNEE
 
+#make list of all CNEE ids
+mkdir -p aligned
+cut -f4,4 taeGut1_cnees_parsed_liftover.bed | split -a 3 -d  -l 1000 - batch
+mv batch* aligned
 
+#now run run_mafft.sh script
 
 #once we have an alignment for each CNEE, use amas https://github.com/marekborowiec/AMAS to concatenate and produce partition file, which can easily be converted to bed format
