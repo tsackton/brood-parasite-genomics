@@ -1,4 +1,4 @@
-setwd("/Users/tim/Projects/birds/brood_parasite/rateTest/het")
+setwd("/Users/tim/Projects/birds/brood_parasite/brood-parasite-genomics/04_protein_coding/branch_test/")
 library(data.table)
 library(qvalue)
 library(tidyr)
@@ -64,46 +64,13 @@ make_qc_plots <- function(DF, file) {
   dev.off()
 }
 
-do_perms<-function(DF, nreps=1000, load="", write="") {
-  #permutations
-  if (load != "") {
-    dn.perm<-fread(load)
-    return(dn.perm)
-  }
-  
-  dn.perm=dn.clean[,.(hog,desc.node,dn.norm)]
-  dn.perm.desc_nodes=data.frame(desc.node=unique(dn.perm$desc.node),test_clade=F, stringsAsFactors = F)
-  nreps=nreps
-  for (i in 1:nreps) {
-    clades_okay = F
-    while (!clades_okay) {
-      test_clades = sample(all_clades, 8)
-      clades_okay = sum(test_clades %in% ratite_clades) < 2 & sum(test_clades %in% vl_clades) < 2 
-    }
-    dn.perm.desc_nodes$test_clade=sapply(strsplit(dn.perm.desc_nodes$desc.node, "-"), function(x) sum(x %in%test_clades)/length(x) == 1)
-    dn.perm$test_clade = dn.perm$desc.node %in% dn.perm.desc_nodes$desc.node[dn.perm.desc_nodes$test_clade]
-    newcol=paste0("rep",i)
-    dn.perm[,(newcol):= { if (inherits(try(ans<-wilcox.test(dn.norm ~ test_clade)$p.value,silent=TRUE),"try-error"))
-      NA_real_
-      else
-        ans
-    }, by=list(hog)]
-  }
-  
-  dn.perm.pval=unique(dn.perm[,c(1,5:length(dn.perm)), with=F])
-  if (write != "") {
-    fwrite(dn.perm.pval, file=write)
-  }
-  return(dn.perm.pval)
-}
-
 get_dir <- function(x, groupby) {
   sign(cor(x=x, y=as.numeric(groupby), use="na.or.complete"))
 }
 
 ## ANALYSIS STARTS HERE ###
 
-dn<-prep_data(file="branches_parsed_het.txt.gz")
+dn<-prep_data(file="branches-parsed-ver2.csv.gz")
 dn.default<-dn #no cleaning
 dn.default<-normalize_branch_stat(dn.default)
 dn.pval<-dn.default[,.(bp.p = compute_pval(dn.norm, bp)), by=hog]
@@ -112,157 +79,4 @@ dn.dir<-dn.default[,.(bp.dir = get_dir(dn.norm, bp)), by=hog]
 length(dn.pval$hog)
 summary(qvalue(dn.pval$bp.p))
 
-dn.perm.pval<-do_perms(dn.default, load="raw_dn_perm_out.csv")
-
-#repeating subset and pval with different filtering
-for (missing in c(0,2,4)) {
-  for (usesp in c(TRUE, FALSE)) {
-    print(missing)
-    print(usesp)
-    dn.default<-subset_clean_data(dn, missing_cutoff = missing, use_sptree = usesp)
-    dn.default<-normalize_branch_stat(dn.default, filter=usesp)
-    dn.pval<-dn.default[,.(ratite.p = compute_pval(dn.norm, ratite),vl.p=compute_pval(dn.norm, vl)), by=hog]
-    print(length(dn.pval$hog))
-    summary(qvalue(dn.pval$ratite.p))
-    summary(qvalue(dn.pval$vl.p))
-  }
-}
-
-#okay now let's look at dropping species and see how things change
-#use only hogs with no missing data
-dn.drop<-subset_clean_data(dn, missing_cutoff = 0)
-#how many hogs?
-dn.drop %>% distinct(hog) %>% summarize(count=n())
-dn.drop <- normalize_branch_stat(dn.drop)
-
-vl_tips_p = c("corBra", "ficAlb", "pseHum", "serCan", "taeGut", "geoFor")
-vl_tips_np = c("melUnd", "calAnn")
-vl_tips <- c("corBra", "ficAlb", "pseHum", "serCan", "taeGut", "geoFor", "melUnd", "calAnn")
-
-get_new_target <- function(drop, nodekey, orig) {
-  vl_tips <- c("corBra", "ficAlb", "pseHum", "serCan", "taeGut", "geoFor", "melUnd", "calAnn")
-  tips_to_keep <- vl_tips[!(vl_tips %in% drop)]
-  new_target<-logical(length(orig))
-  for (selTip in tips_to_keep) {
-    new_target[grepl(selTip, nodekey, fixed=T) & orig]=TRUE
-  }
-  return(new_target)
-}
-
-#make a bunch of new columns that each drop 1 vocal learner tips -- start there at least
-dn.drop <- dn.drop %>% mutate(vl1p1 = get_new_target(c("corBra"), desc.node, vl)) %>%
-  mutate(vl1p2 = get_new_target(c("ficAlb"), desc.node, vl)) %>%
-  mutate(vl1p3 = get_new_target(c("pseHum"), desc.node, vl)) %>%
-  mutate(vl1p4 = get_new_target(c("serCan"), desc.node, vl)) %>%
-  mutate(vl1p5 = get_new_target(c("taeGut"), desc.node, vl)) %>%
-  mutate(vl1p6 = get_new_target(c("geoFor"), desc.node, vl)) %>%
-  mutate(vl1np1 = get_new_target(c("melUnd"), desc.node, vl)) %>%
-  mutate(vl1np2 = get_new_target(c("calAnn"), desc.node, vl)) %>% as.data.table
-
-dn.drop1.pval<- dn.drop %>% group_by(hog) %>% mutate(vl1p1p = compute_pval(dn.norm, vl1p1)) %>%
-  mutate(vl1p2p = compute_pval(dn.norm, vl1p2)) %>%
-  mutate(vl1p3p = compute_pval(dn.norm, vl1p3)) %>%
-  mutate(vl1p4p = compute_pval(dn.norm, vl1p4)) %>%
-  mutate(vl1p5p = compute_pval(dn.norm, vl1p5)) %>%
-  mutate(vl1p6p = compute_pval(dn.norm, vl1p6)) %>%
-  mutate(vl1np1p = compute_pval(dn.norm, vl1np1)) %>%
-  mutate(vl1np2p = compute_pval(dn.norm, vl1np2)) %>%
-  mutate(vlorigP = compute_pval(dn.norm, vl)) %>%
-  select(hog, vl1p1p:vlorigP) %>% ungroup %>% distinct
-
-dn.drop1.pval %>% select(-hog) %>% apply(., 2, function(x) qvalue(x)$pi0)
-
-#need a programmatic way to construct next set of columns
-vl_tips2 <- c("corBra", "ficAlb", "pseHum", "serCan", "taeGut", "geoFor", "melUnd", "calAnn", "none")
-tipCount <- length(vl_tips2)
-drop.res<-data.frame(dropped_tips = character(), q01 = numeric(), q05 = numeric(), p01 = numeric(), p001 = numeric(), pi0 = numeric())
-
-for (i in 1:tipCount) {
-  for (j in i:tipCount) {
-    for (k in j:tipCount) {
-    cols_to_drop = c(vl_tips2[i], vl_tips2[j], vl_tips2[k])
-    colstring = paste0(cols_to_drop, collapse="-")
-    ct<-dn.drop %>% group_by(hog) %>% mutate(newtarget = get_new_target(cols_to_drop, desc.node, vl), newpval = compute_pval(dn.norm, newtarget)) %>% ungroup %>% select(hog, newpval) %>% distinct %>% select(-hog) %>% apply(., 2, qvalue, pi0.method = "bootstrap")
-    drop.res<-rbind(drop.res, data.frame(dropped_tips = colstring, q01 = sum(ct$newpval$qvalues <= 0.01), q05 = sum(ct$newpval$qvalues <= 0.05), p01 = sum(ct$newpval$pvalues <= 0.01), p001 = sum(ct$newpval$pvalues <= 0.001), pi0 = ct$newpval$pi0, row.names = NULL))
-    print(drop.res)
-   }
-  }
-}
-
-#clean up
-drop.res.clean <- drop.res %>% tbl_df %>% 
-  mutate(calAnn = grepl("calAnn", dropped_tips), melUnd = grepl("melUnd", dropped_tips), corBra = grepl("corBra", dropped_tips), ficAlb = grepl("ficAlb", dropped_tips), pseHum = grepl("pseHum", dropped_tips), serCan = grepl("serCan", dropped_tips), taeGut = grepl("taeGut", dropped_tips), geoFor = grepl("geoFor", dropped_tips)) %>%
-  mutate(os_drop_ct = as.numeric(corBra) + as.numeric(ficAlb) + as.numeric(pseHum) + as.numeric(serCan) + as.numeric(taeGut) + as.numeric(geoFor)) %>%
-  mutate(nonos_drop_ct = as.numeric(calAnn) + as.numeric(melUnd)) %>% rowwise %>% 
-  mutate(which_nonos = if(!calAnn & !melUnd) { "none" } else if (calAnn & melUnd) { "both" } else if (calAnn & !melUnd) { "calAnn" } else { "melUnd" }) %>%
-  mutate(drop_ct = os_drop_ct + nonos_drop_ct) %>% select(-dropped_tips) %>% ungroup %>% distinct
-
-
-drop.res.clean %>% ggplot(aes(as.factor(drop_ct),pi0)) + geom_jitter(aes(color=which_nonos), width = 0.1)
-
-drop.res.clean %>% ggplot(aes(as.factor(drop_ct),q01)) + geom_jitter(aes(color=as.factor(os_drop_ct)), width = 0.1)
-
-drop.res.clean %>% ggplot(aes(as.factor(drop_ct),p001)) + geom_jitter(aes(color=as.factor(which_nonos)), width = 0.15)
-
-drop.res.clean %>% filter(drop_ct == 3) %>% mutate(non_osc = factor(which_nonos, levels=c('none', 'calAnn', 'melUnd', 'both'))) %>% lm(q01 ~ non_osc, data= . ) %>% summary
-
-drop.res.clean %>% filter(drop_ct == 2) %>% mutate(non_osc = factor(which_nonos == "none")) %>% lm(q01 ~ non_osc, data= . ) %>% summary
-
-write.table(drop.res.clean, file="drop_init_run.tsv", sep="\t", quote=F, row.names=F, col.names = T)
-
-#FUNCTIONAL TESTS
-
-dn.pval.merge <- dn.pval %>% left_join(., hog_to_gene)
-
-#load Zhang data
-zhang<-read.table("ZhangTableS28.txt", header=T, sep="\t", comment.char="", fill=T, stringsAsFactors = F) %>% tbl_df %>% select(gene = Gene.symbol, qval = adj.p.value)
-
-dn.pval.merge <- dn.pval.merge %>% left_join(., zhang)
-dn.pval.merge$vl.q = qvalue(dn.pval.merge$vl.p)$qvalue
-dn.pval.merge <- dn.pval.merge %>% filter(!is.na(vl.q)) %>% mutate(zhang.sig05 = as.numeric(!is.na(qval)))
-
-dn.pval.merge <- dn.pval.merge %>% left_join(., dn.dir)
-dn.pval.merge$sig05 = as.numeric(dn.pval.merge$vl.q < 0.05) * dn.pval.merge$vl.dir
-
-dn.pval.merge %>% with(., table(zhang.sig05, sig05 == 1)) %>% fisher.test
-#significant if low magnitude overlap with Zhang et al 2014 vocal learning genes, when restricting to accelerated class (dir +)
-
-#based on symbol matching so should be good but not perfect orthology
-
-
-
-
-# PLOTTING BELOW ##
-
-#hog_to_plot = 1086
-#with(dn.clean[dn.clean$hog==hog_to_plot,], plot(sort(dn.norm), col=ifelse(ratite[order(dn.norm)],"red", ifelse(nrpalaeo[order(dn.norm)], "black", ifelse(vl[order(dn.norm)], "blue", "gray50"))), pch=16))
-
-#FIGURE 2A
-
-#inset
-
-plot(density(apply(dn.perm.pval, 2, function(x) sum(x < 0.05)/length(x))[2:length(dn.perm.pval)]), col="black", xlim=c(0,0.25), xlab="Fraction of tests with P < 0.05", las=1, bty="n", main="")
-ratite.p.frac=sum(dn.pval$ratite.p[!is.na(dn.pval$ratite.p)] < 0.05)/sum(!is.na(dn.pval$ratite.p))
-vl.p.frac=sum(dn.pval$vl.p[!is.na(dn.pval$vl.p)] < 0.05)/sum(!is.na(dn.pval$vl.p))
-arrows(x0=vl.p.frac,y0=2,x1=vl.p.frac,y1=0, col="firebrick", lwd=2)
-arrows(x0=ratite.p.frac,y0=2,x1=ratite.p.frac,y1=0, col="blue", lwd=2)
-text(x=vl.p.frac, y=2.5, labels=c("Vocal Learners"))
-text(x=ratite.p.frac, y=2.5, labels=c("Ratites"))
-
-#figure -- need to do better than just overplotting 1000 lines though
-permdist<-cut(as.data.frame(dn.perm.pval)[,2], breaks=seq(0,1,0.01),labels=F)
-plot(table(permdist), type="l", col=rgb(100,100,100,alpha=50,maxColorValue=255), ylim=c(0,700), xaxt="n", ylab="Count", las=1, xlab="P-value")
-for (i in 3:length(dn.perm.pval)) {
-  permdist<-cut(as.data.frame(dn.perm.pval)[,i], breaks=seq(0,1,0.01))
-  points(table(permdist), type="l", col=rgb(100,100,100,alpha=50,maxColorValue=255))
-  
-}
-
-ratite<-cut(dn.pval$ratite.p, breaks=seq(0,1,0.01), labels=F)
-vl<-cut(dn.pval$vl.p, breaks=seq(0,1,0.01), labels=F)
-
-lines(table(ratite), type="l", col="blue", lwd=3, lty="dashed")
-lines(table(vl), type="l", col="firebrick", lwd=3, lty="dashed")
-axis(1, labels=seq(0,1,0.2), at=seq(0,100,20))
-legend("topright", legend=c("random", "ratite", "vocal learners"), col=c("gray50", "blue", "firebrick"), lwd=3, lty="dashed")
-
+write.table(dn.pval, file="bp_rate_test_pval.tsv", sep="\t", quote=F, row.names = F)
