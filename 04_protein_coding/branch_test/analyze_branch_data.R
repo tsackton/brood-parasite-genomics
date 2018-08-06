@@ -79,4 +79,5 @@ dn.dir<-dn.default[,.(bp.dir = get_dir(dn.norm, bp)), by=hog]
 length(dn.pval$hog)
 summary(qvalue(dn.pval$bp.p))
 
+dn.pval$q = p.adjust(dn.pval$bp.p, method="fdr")
 write.table(dn.pval, file="bp_rate_test_pval.tsv", sep="\t", quote=F, row.names = F)
